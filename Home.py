@@ -40,7 +40,7 @@ def check_password():
 
 if check_password():
    #  st.write("Here goes your normal Streamlit app...")
-   #  st.button("Click me")
+   st.button("Click me")
 
 
    st.subheader("Обрати вид договору")
