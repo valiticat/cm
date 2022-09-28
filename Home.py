@@ -151,8 +151,8 @@ if check_password():
       col1, col2, col3 = st.columns(3)
       with col2:
          st.subheader("ДОГОВІР №")
-      st.write(f"""на надання послуг з поточного ремонту в обсязі {input1}""")
-      st.write(f"""та технічного обслуговування в обсязі {input2}""")
+      st.write(f"""на надання послуг з поточного ремонту в обсязі {input1} 
+      та технічного обслуговування в обсязі {input2}""")
 
       col1, col2 = st.columns([1,0.2])
       with col1:
