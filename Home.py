@@ -327,8 +327,10 @@ if check_password():
             st.write("ВІД ЗАМОВНИКА:")
             st.caption(input7)
 
-
-
+      final = st.button("Зберегти")
+      
+      if final:
+         st.balloons()
 
 
    else:
