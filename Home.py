@@ -121,6 +121,7 @@ if check_password():
          with in11_col:
             input11 = st.text_input("Номер", "302")
 
+         st.caption("Вартість послуг та призначення платежів")
          in12_col, in13_col = st.columns(2)
          with in12_col:
             input12 = st.number_input("Вартість однієї послуги з ремонту (грн), з ПДВ")
@@ -128,8 +129,7 @@ if check_password():
          
          with in13_col:
             input13 = st.number_input("Загальна вартість договору (грн), з ПДВ")
-
-         input14 = st.text_input("Призначення платежу")
+            input14 = st.text_input("Призначення платежу")
 
          st.caption("Приймання в ремон та видача з ремонту")
          in15_col, in16_col = st.columns(2)
