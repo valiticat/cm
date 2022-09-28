@@ -300,7 +300,6 @@ if check_password():
       with st.expander("13. Юридичні адреси та банківські реквізити Сторін"):
          
          contractor, client = st.columns(2)
-
          with contractor:
             st.write("Виконавець:")
             st.caption('Акціонерне товариство «Українська залізниця»')
@@ -311,12 +310,20 @@ if check_password():
             st.caption("""в  АТ «Ощадбанк» ФЛОУ ТВБВ №10013/03 м. Львів 
             МФО 325796 ЄДРПОУ 40081195/26 
             інд.под.№ 400758126555""")
-            st.write("ВІД ВИКОНАВЦЯ:")
          
          with client:
             st.write("Замовник:")
             st.caption(input6)
+            st.caption("")
+            st.caption("")
+            st.caption("Для розрахунків:")
             st.caption(bank_details)
+         
+         contractor_rep, client_rep = st.columns(2)
+         with contractor_rep:
+            st.write("ВІД ВИКОНАВЦЯ:")
+            st.caption("")
+         with client_rep:
             st.write("ВІД ЗАМОВНИКА:")
             st.caption(input7)
 
