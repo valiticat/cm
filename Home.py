@@ -117,7 +117,7 @@ if check_password():
          with in15_col:
             input15 = st.text_input("Форма акту приймання", "ТУ-25")
          with in16_col:
-            input16 = st.number_input("Номер інструкції", "ЦТ 0057")
+            input16 = st.text_input("Номер інструкції", "ЦТ 0057")
          
          
 
