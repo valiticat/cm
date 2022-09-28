@@ -50,7 +50,7 @@ if check_password():
          ["Договір на послуги з ремонту тепловозу", 
          "Договір оренди"]) 
    with type_col:
-      select_type = st.radio('', ['Витратний', 'Прибутковий'], horizontal=True)
+      select_type = st.radio('', ['Прибутковий', 'Витратний'], horizontal=True)
    
    if select_cat == "Договір на послуги з ремонту тепловозу":
       st.write("""Існує типовий договір обраного виду""") 
