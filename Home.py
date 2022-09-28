@@ -295,6 +295,8 @@ if check_password():
          make_contract = st.button("Створити", key='make_contract')
       with use_col:
          use_draft = st.file_uploader("Завантажити проєкт контрагента", key='use_draft')
+
+      st.write("")
       
       if use_draft:
          st.write("Проєкт договору потребує погодження...")
