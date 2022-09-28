@@ -147,11 +147,6 @@ if check_password():
       st.write("")
       st.write("")
 
-      def change_draft():
-         """Initiate changes to the draft contract"""
-         return st.error("""Внесення змін до цього розділу потребуватиме погодження
-         таких підрозділів: Ц..., Ц..., Ц...""")
-
       with st.expander("Преамбула"):
 
          col1, col2, col3 = st.columns(3)
@@ -183,7 +178,10 @@ if check_password():
          st.caption(f"""1.2. За даним договором Виконавець протягом його дії проводить 
          {input1} та {input2} один раз згідно графіка (Додаток 1).""")
 
-         init_change = st.button("Змінити", on_click=change_draft)
+         init_change = st.button("Змінити")
+         if init_change:
+            st.error("""Внесення змін до цього розділу потребуватиме погодження
+         таких підрозділів: Ц..., Ц..., Ц...""")
 
       with st.expander("2. Вартість послуг і умови розрахунку"):
          st.caption(f"""2.1. Вартість послуг за договором визначена у Протоколі погодження вартості 
