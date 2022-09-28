@@ -79,13 +79,16 @@ if check_password():
    "11. Термін дії Договору", "12. Додатки до договору", 
    "13. Юридичні адреси та банківські реквізити Сторін"]
 
+   # Add empty line for better readibility
+   st.write("")
+
    col1, col2, col3 = st.columns(3)
    with col2:
       st.subheader("ДОГОВІР №__")
    st.write(f"""на надання послуг з поточного ремонту в обсязі 
    {input1} та технічного обслуговування в обсязі {input2}""")
 
-   col1, col2 = st.columns([1,0.5])
+   col1, col2 = st.columns([1,0.3])
    with col1:
       st.caption(f"м. {input3}")
    with col2:
