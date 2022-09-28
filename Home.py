@@ -216,6 +216,6 @@ if check_password():
       Замовником повертається Виконавцю."""
       st.caption(art4)
    
-   for chapter in chapters[4:]:
+   for chapter in chapters[5:]:
       with st.expander(chapter):
          st.write("Some text")
