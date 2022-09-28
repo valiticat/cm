@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from datetime import date
 
 # Configure the page
 st.set_page_config(
@@ -51,7 +52,7 @@ if check_password():
       select_type = st.radio('', ['Витратний', 'Прибутковий'], horizontal=True)
 
    st.write("""Існує типовий договір обраного виду.""") 
-   st.write("""Зазначте необхідні дані для формування договору.""")
+   st.write("""Зазначте необхідні дані для завершення формування договору.""")
 
    if select_cat == "Договір на послуги з ремонту тепловозу":
       col1, col2 = st.columns(2)
@@ -59,6 +60,15 @@ if check_password():
          input1 = st.selectbox("Обсяг ремонту", ["ПР-1", "ПР-2"])
       with col2:
          input2 = st.selectbox("Обсяг ТО", ["ТО-3", "ТО-4"])
+
+      col3, col4 = st.columns(2)
+      with col3:
+         input3 = st.selectbox("Місто укладання договору", 
+         ["Київ", "Львів", "Харків", "Дніпро", "Одеса", "Лиман"])
+      with col4:
+         current_date = date.today()
+         input4 = st.date_input("Дата укладання договору", min_value=current_date)
+
 
    chapters = [
       "Преамбула", "1. Предмет договору", "2. Вартість послуг і умови розрахунку",
