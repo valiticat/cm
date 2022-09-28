@@ -87,7 +87,7 @@ if check_password():
          st.caption("Інформація щодо контрагента")
          in5_col, in6_col = st.columns(2)
          with in5_col:
-            input5 = st.text_input("Код ЄДРПОУ Контрагента*", '38560924')
+            input5 = st.text_input("Код ЄДРПОУ Контрагента*", '00740599')
             st.caption("*спробуй  00740599, 38560924 або 40297125")
          with in6_col:
             edr = {
