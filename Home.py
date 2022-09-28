@@ -52,22 +52,33 @@ if check_password():
       select_type = st.radio('', ['Витратний', 'Прибутковий'], horizontal=True)
 
    st.write("""Існує типовий договір обраного виду.""") 
-   st.write("""Зазначте необхідні дані для завершення формування договору.""")
 
-   if select_cat == "Договір на послуги з ремонту тепловозу":
-      in1_col, in2_col = st.columns(2)
-      with in1_col:
-         input1 = st.selectbox("Обсяг ремонту", ["ПР-1", "ПР-2"])
-      with in2_col:
-         input2 = st.selectbox("Обсяг ТО", ["ТО-3", "ТО-4"])
+   # User Inputs
+   with st.expander("Зазначте необхідні дані для завершення формування договору"):
+      if select_cat == "Договір на послуги з ремонту тепловозу":
+         in1_col, in2_col = st.columns(2)
+         with in1_col:
+            input1 = st.selectbox("Обсяг ремонту", ["ПР-1", "ПР-2"])
+         with in2_col:
+            input2 = st.selectbox("Обсяг ТО", ["ТО-3", "ТО-4"])
 
-      in3_col, in4_col = st.columns(2)
-      with in3_col:
-         input3 = st.selectbox("Місто укладання договору", 
-         ["Київ", "Львів", "Харків", "Дніпро", "Одеса", "Лиман"])
-      with in4_col:
-         current_date = date.today()
-         input4 = st.date_input("Дата укладання договору", min_value=current_date)
+         in3_col, in4_col = st.columns(2)
+         with in3_col:
+            input3 = st.selectbox("Місто укладання договору", 
+            ["Київ", "Львів", "Харків", "Дніпро", "Одеса", "Лиман"])
+         with in4_col:
+            current_date = date.today()
+            input4 = st.date_input("Дата укладання договору", min_value=current_date)
+
+         in5_col, in6_col = st.columns(2)
+         with in5_col:
+            input5 = st.text_input("Код ЄДРПОУ Контрагента", '38560924')
+         with in6_col:
+            edr = {'38560924' : 'Товариство з обмеженою відповідальністю "Полтавський тепловозоремонтний завод"'}
+            input6 = edr.get(input5)
+            st.caption(input6)
+
+         
 
 
    chapters = [
@@ -96,7 +107,12 @@ if check_password():
 
    with st.expander("Преамбула"):
       st.caption("""Акціонерне товариство «Українська залізниця», далі – Виконавець, 
-      в особі  акціонерного товариства «Українська залізниця», та, з однієї сторони, та""")
+      в особі акціонерного товариства «Українська залізниця», з однієї сторони, та""")
+      st.caption(f"""{input6}, далі – Замовник, в особі 
+       _____________________, який діє на підставі довіреності № ____ від _________ р., 
+       з іншої сторони, при  спільному згадуванні – Сторони, уклали цей Договір про наступне.""")
+
+   
    
    
    for chapter in chapters[1:]:
