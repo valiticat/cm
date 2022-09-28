@@ -100,7 +100,7 @@ if check_password():
          with in10_col:
             input10 = st.text_input("Серія", "ЧМЕЗ")
          with in11_col:
-            input11 = st.date_input("Номер", "302")
+            input11 = st.text_input("Номер", "302")
          
          
 
