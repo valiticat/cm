@@ -55,17 +55,17 @@ if check_password():
    st.write("""Зазначте необхідні дані для завершення формування договору.""")
 
    if select_cat == "Договір на послуги з ремонту тепловозу":
-      col1, col2 = st.columns(2)
-      with col1:
+      in1_col, in2_col = st.columns(2)
+      with in1_col:
          input1 = st.selectbox("Обсяг ремонту", ["ПР-1", "ПР-2"])
-      with col2:
+      with in2_col:
          input2 = st.selectbox("Обсяг ТО", ["ТО-3", "ТО-4"])
 
-      col3, col4 = st.columns(2)
-      with col3:
+      in3_col, in4_col = st.columns(2)
+      with in3_col:
          input3 = st.selectbox("Місто укладання договору", 
          ["Київ", "Львів", "Харків", "Дніпро", "Одеса", "Лиман"])
-      with col4:
+      with in4_col:
          current_date = date.today()
          input4 = st.date_input("Дата укладання договору", min_value=current_date)
 
@@ -79,9 +79,18 @@ if check_password():
    "11. Термін дії Договору", "12. Додатки до договору", 
    "13. Юридичні адреси та банківські реквізити Сторін"]
 
-   st.subheader("ДОГОВІР №__")
+   col1, col2, col3 = st.columns(3)
+   with col2:
+      st.subheader("ДОГОВІР №__")
    st.write(f"""на надання послуг з поточного ремонту в обсязі 
    {input1} та технічного обслуговування в обсязі {input2}""")
+
+   col1, col2 = st.columns([1,0.5])
+   with col1:
+      st.caption(f"м. {input3}")
+   with col2:
+      st.caption(input4)
+
 
    for chapter in chapters:
       with st.expander(chapter):
