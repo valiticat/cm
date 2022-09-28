@@ -93,7 +93,7 @@ if check_password():
          with in8_col:
             input8 = st.text_input("Номер довіреності")
          with in9_col:
-            input9 = st.date_input("Дата видачі довіреності", max_value=current_date)
+            input9 = st.date_input("Дата видачі довіреності")
          
          
 
