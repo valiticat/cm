@@ -40,11 +40,11 @@ def check_password():
 
 if check_password():
 
-   st.subheader("Обрати вид договору")
+   st.subheader("Формування договору")
    cat_col, type_col = st.columns([1,0.5])
    with cat_col:
       select_cat = st.selectbox(
-         "", 
+         "Обрати вид договору", 
          ["Договір на послуги з ремонту тепловозу", 
          "Договір оренди", "Договір надання послуг"]) 
    with type_col:
