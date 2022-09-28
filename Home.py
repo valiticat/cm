@@ -287,14 +287,14 @@ if check_password():
 
    else:
       st.write("Відсутній типовий договір обраного виду")
-      st.write("""Ви можете створити ініціювати створення нового договору 
+      st.write("""Ви можете ініціювати створення нового договору 
       або використати проєкт, наданий контрагентом""")
 
       make_col, use_col = st.columns([0.5,1])
       with make_col:
          make_contract = st.button("Створити", key='make_contract')
       with use_col:
-         use_draft = st.file_uploader("Завантажити", key='use_draft')
+         use_draft = st.file_uploader("Завантажити проєкт контрагента", key='use_draft')
       
       if use_draft:
          st.write("Проєкт договору потребує погодження...")
