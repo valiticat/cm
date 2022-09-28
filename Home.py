@@ -42,20 +42,20 @@ def check_password():
 if check_password():
 
    st.subheader("Формування договору")
+   cat_col, type_col = st.columns([1,0.5])
+   with cat_col:
+      select_cat = st.selectbox(
+         "Обрати вид договору", 
+         ["Договір на послуги з ремонту тепловозу", 
+         "Договір оренди"]) 
+   with type_col:
+      select_type = st.radio('', ['Витратний', 'Прибутковий'], horizontal=True)
+   
    st.write("""Існує типовий договір обраного виду""") 
 
    # User Inputs
    with st.expander("Зазначте необхідні дані для завершення формування договору"):
       if select_cat == "Договір на послуги з ремонту тепловозу":
-
-         cat_col, type_col = st.columns([1,0.5])
-         with cat_col:
-            select_cat = st.selectbox(
-               "Обрати вид договору", 
-               ["Договір на послуги з ремонту тепловозу", 
-               "Договір оренди"]) 
-         with type_col:
-            select_type = st.radio('', ['Витратний', 'Прибутковий'], horizontal=True)
 
          in0_col, in01_col = st.columns(2)
          with in0_col:
