@@ -88,7 +88,7 @@ if check_password():
    st.write(f"""на надання послуг з поточного ремонту в обсязі 
    {input1} та технічного обслуговування в обсязі {input2}""")
 
-   col1, col2 = st.columns([1,0.3])
+   col1, col2 = st.columns([1,0.1])
    with col1:
       st.caption(f"м. {input3}")
    with col2:
