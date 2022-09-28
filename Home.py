@@ -39,12 +39,9 @@ def check_password():
         return True
 
 if check_password():
-   #  st.write("Here goes your normal Streamlit app...")
-   st.button("Click me")
-
 
    st.subheader("Обрати вид договору")
-   cat_col, type_col = st.columns([1,1])
+   cat_col, type_col = st.columns([1,0.7])
    with cat_col:
       select_cat = st.selectbox(
          "", 
