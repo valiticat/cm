@@ -66,11 +66,9 @@ if check_password():
             input01 = st.selectbox("Виробничий підрозділ ініціатора",
             ['Локомотивне депо Львів-Захід'])
 
-         in02_col, label_col = st.columns([0.2,1])
+         in02_col, empty_col = st.columns([0.2,1])
          with in02_col:
-            input02 = st.selectbox("", [2022, 2023])
-         with label_col:
-            st.caption("Період (рік) проведення ремонтів")
+            input02 = st.selectbox("Період (рік)", [2022, 2023])
 
          in1_col, in2_col = st.columns(2)
          with in1_col:
