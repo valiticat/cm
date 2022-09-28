@@ -290,7 +290,7 @@ if check_password():
       st.write("""Ви можете створити ініціювати створення нового договору 
       або використати проєкт, наданий контрагентом""")
 
-      make_col, use_col = st.columns(2):
+      make_col, use_col = st.columns(2)
       with make_col:
          make_contract = st.button("Створити", key='make_contract')
       with use_col:
