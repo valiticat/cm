@@ -94,7 +94,11 @@ if check_password():
    with col2:
       st.caption(input4)
 
-
-   for chapter in chapters:
+   with st.expander(""):
+      st.caption("""Акціонерне товариство «Українська залізниця», далі – Виконавець, 
+      в особі  акціонерного товариства «Українська залізниця», та, з однієї сторони, та""")
+   
+   
+   for chapter in chapters[1:]:
       with st.expander(chapter):
          st.write("Some text")
