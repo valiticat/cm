@@ -310,4 +310,4 @@ if check_password():
          "Антикорупційне застереження", "Порядок вирішення спорів", 
          "Застереження про конфіденційність"]
 
-         st.multiselect("Використати шаблони", options=chapters, default=chapters[:-1])
+         select_chapters = st.multiselect("Використати шаблони", options=chapters, default=chapters[:-1])
